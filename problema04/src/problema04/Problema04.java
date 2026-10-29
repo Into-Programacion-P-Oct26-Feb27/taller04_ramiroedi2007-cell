@@ -28,6 +28,7 @@ public class Problema04 {
         double pantalla;
         double costoBase;
         double porcentajeOperacional = 0.15;
+        double costoAdicional;
         double costoFinal;
         
         System.out.println("Ingrese el nombre del cliente");
@@ -41,19 +42,22 @@ public class Problema04 {
         System.out.println("Ingrese el valor de la pantalla");
         pantalla = entrada.nextDouble();
         
-        costoBase = cPU + teclado + raton + pantalla ;
-        costoFinal = porcentajeOperacional * costoBase;
+        costoBase = (cPU + teclado + raton + pantalla) ;
+        costoAdicional = (porcentajeOperacional * costoBase);
+        costoFinal = (costoAdicional + costoBase);
         
-        System.out.printf("============================\nPLANILLA DE SERVICIO TELEFONICO"
-                + "\n===================================\nTitular: %s\n"
-                + "Direccion: %s\n----------------------\n"
-                + "Costo por minuto: %s\n"
-                + "Minutos consumidos %s\n-------------------\n"
-                + "VALOR TOTAL A PAGAR: %s\n==========================" , nombreTitular,
-                nombreDireccion,
-                costoMinuto,
-                minutosConsu,
-                totalPagar);
+        System.out.printf("Nombre cliente: %s\nValores: \nCPU: $%s\n"
+                + "Teclado: $%s\nRaton: $%s\nPantalla: $%s\n\n"
+                + "Costo base: $%s\nCosto adicional: %s\n"
+                + "Costo final: $%s\n",
+                nombreCliente,
+                cPU,
+                teclado,
+                raton,
+                pantalla,
+                costoBase,
+                costoAdicional,
+                costoFinal);
     }
     
 }
